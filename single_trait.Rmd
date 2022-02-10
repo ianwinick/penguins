@@ -1,0 +1,21 @@
+---
+title: "Single Trait Distribution"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, echo=FALSE, include=FALSE, warning=FALSE}
+#install.packages("palmerpenguins")
+library(palmerpenguins)
+library(tidyverse)
+```
+
+Chinstrap penguins have the greatest bill length and gentoo penguins have the greatest mass.
+
+```{r, echo=FALSE, warning=FALSE}
+ggplot(data = penguins) +
+  geom_density(mapping = aes(x = bill_length_mm, fill = species), alpha = 0.5)
+```

@@ -1,0 +1,26 @@
+---
+title: "Multiple Trait Distribution"
+author: "Ian"
+date: "2/10/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Body mass and bill length are positively correlated in all three species.
+
+```{r, echo=FALSE, include=FALSE, warning=FALSE}
+#install.packages("palmerpenguins")
+library(palmerpenguins)
+library(tidyverse)
+```
+
+
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+ggplot(data=penguins, mapping = aes(x=bill_depth_mm, y=body_mass_g, color=species)) +
+  geom_point() +
+  geom_smooth(method = "lm")
+```

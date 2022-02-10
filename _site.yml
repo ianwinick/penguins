@@ -1,0 +1,13 @@
+name: "Penguins"
+navbar:
+  title: "My Penguin Exercise"
+  left:
+    - text: "Single Trait"
+      href: single_trait.html
+    - text: "Multiple Traits"
+      href: multiple_traits.html
+output_dir: "."
+
+This data set describe three species of penguin from three islands in Antarctica. These data were collected and made available by Dr. Kristen Gorman and the Palmer Station, Antarctica LTER.
+
+![Photos of penguin species](C:\Users\Ian\Desktop/Lab3_Photo1.png)

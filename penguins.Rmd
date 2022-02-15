@@ -1,0 +1,49 @@
+---
+title: "penguins"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Data
+
+This data set describe three species of penguin from three islands in Antarctica. These data were collected and made available by Dr. Kristen Gorman and the Palmer Station, Antarctica LTER.
+
+![Photos of penguin species](C:\Users\Ian\Desktop/Lab3_Photo1.png)
+
+```{r, echo=FALSE, include=FALSE, warning=FALSE}
+#install.packages("palmerpenguins")
+library(palmerpenguins)
+library(tidyverse)
+```
+
+
+## Single trait distribution
+
+Chinstrap penguins have the greatest bill length and gentoo penguins have the greatest mass.
+
+```{r, echo=FALSE, warning=FALSE}
+ggplot(data = penguins) +
+  geom_density(mapping = aes(x = bill_length_mm, fill = species), alpha = 0.5)
+```
+
+```{r, echo=FALSE, warning=FALSE}
+ggplot(data = penguins) +
+  geom_density(mapping = aes(x = body_mass_g, fill = species), alpha = 0.5)
+```
+
+## Relationship between multiple traits
+
+Body mass and bill length are positively correlated in all three species.
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+ggplot(data=penguins, mapping = aes(x=bill_depth_mm, y=body_mass_g, color=species)) +
+  geom_point() +
+  geom_smooth(method = "lm")
+  
+```
+
+
+## Sexual dimorphism
